@@ -1,5 +1,6 @@
 
 const btn = document.querySelector('button');
+const numeroBombe = 16;
 
 btn.addEventListener('click',function(){
   // Vado a prendere la const della griglia
@@ -54,4 +55,8 @@ function creazioneQuadratino(campo){
     
     return quadratino;
 
+}
+function generaBombe(){
+    const bombeArray = [];
+    while (bombeArray.length < numeroBombe)
 }
