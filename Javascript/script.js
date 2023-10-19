@@ -24,10 +24,15 @@ btn.addEventListener('click',function(){
    
     }
 
-    let bombeArray= generaBombe()
+    const bombeArray= generaBombe()
     console.log(bombeArray)
+    grigliaGioco.append(bombeArray);
+    //let coloreRosso = clickBombe()
+    //console.log(coloreRosso)
 
 })
+
+ // FUNZIONE CREAZIONE QUADRATINI CAMPO DA GIOCO
 
 function creazioneQuadratino(campo){
     // Creo una const per poi successivamente assegnargli classe css 
@@ -47,6 +52,7 @@ function creazioneQuadratino(campo){
 
 }
 
+// FUNZIONE CHE GENERA 16 BOMBE 
 
 function generaBombe(){
     const bombeArray = [];
@@ -64,7 +70,13 @@ function generaBombe(){
     return bombeArray;
 }
 
-
+function clickBombe(quadratino){
+    quadratino.addEventListener('click', function(){
+        quadratino.classList.add('backround-color');        
+        console.log(quadratino.innerHTML);
+        
+    })
+}
 
 
 
