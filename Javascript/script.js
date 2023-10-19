@@ -2,6 +2,7 @@
 const btn = document.querySelector('button');
 const numeroBombe = 16;
 const bombeArray= generaBombe()
+console.log(bombeArray)
 
 btn.addEventListener('click',function(){
  
@@ -14,7 +15,7 @@ btn.addEventListener('click',function(){
 
  const celle = 100;
  
- console.log(bombeArray)
+ 
  
  for(let i = 0; i < celle; i++){
 
@@ -29,9 +30,6 @@ btn.addEventListener('click',function(){
 
     
     
-    //let coloreRosso = clickBombe()
-    //console.log(coloreRosso)
-
 })
 
  // FUNZIONE CREAZIONE QUADRATINI CAMPO DA GIOCO
@@ -49,6 +47,8 @@ function creazioneQuadratino(campo){
         if(bombeArray.includes(campo +1)){
 
         quadratino.classList.add('backround-color');
+        let write = alert ('Hai perso,il gioco è finito') 
+        console.log(write)
         
         }else{
             quadratino.classList.add('backround');
