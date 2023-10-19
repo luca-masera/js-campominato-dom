@@ -3,39 +3,29 @@ const btn = document.querySelector('button');
 const numeroBombe = 16;
 
 btn.addEventListener('click',function(){
-  // Vado a prendere la const della griglia
+ 
   
   btn.onclick = function(){
     btn.disabled= true;
   }
 
   const grigliaGioco = document.getElementById('campo-gioco');
- 
 
- // Vado a specificare il numero di quadratini che devono esserci in tutta la griglia
  const celle = 100;
-
- //Creo un ciclo per formare numeri progressivi da 1 a 100
  
  for(let i = 0; i < celle; i++){
 
     //console.log(i)
 
-    // genero quadratino richiamando la funzione
     let quadratino = creazioneQuadratino(i);
     //console.log(quadratino)
-    //appendo il quadratino alla mia griglia
-    grigliaGioco.append(quadratino);
-
     
-    function getRndInteger(min,max){
-        return Math.floor(Math.random() * (max - min + 1)) + min;   
-                
+    grigliaGioco.append(quadratino);   
+   
     }
-    let bomba = getRndInteger (1,16)
-    console.log(bomba)
 
-}
+    let bombeArray= generaBombe()
+    console.log(bombeArray)
 
 })
 
@@ -56,7 +46,29 @@ function creazioneQuadratino(campo){
     return quadratino;
 
 }
+
+
 function generaBombe(){
     const bombeArray = [];
-    while (bombeArray.length < numeroBombe)
+    
+    while (bombeArray.length < numeroBombe){
+        let bomba = getRndInteger (1,16)
+        console.log(bomba)
+        
+        
+        if(!bombeArray.includes(bomba)){
+            bombeArray.push(bomba);
+        }
+    }
+    console.log(bombeArray);
+    return bombeArray;
+}
+
+
+
+
+
+function getRndInteger(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;   
+            
 }
