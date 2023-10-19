@@ -1,6 +1,7 @@
 
 const btn = document.querySelector('button');
 const numeroBombe = 16;
+const bombeArray= generaBombe()
 
 btn.addEventListener('click',function(){
  
@@ -13,6 +14,8 @@ btn.addEventListener('click',function(){
 
  const celle = 100;
  
+ console.log(bombeArray)
+ 
  for(let i = 0; i < celle; i++){
 
     //console.log(i)
@@ -24,9 +27,8 @@ btn.addEventListener('click',function(){
    
     }
 
-    const bombeArray= generaBombe()
-    console.log(bombeArray)
-    grigliaGioco.append(bombeArray);
+    
+    
     //let coloreRosso = clickBombe()
     //console.log(coloreRosso)
 
@@ -43,8 +45,15 @@ function creazioneQuadratino(campo){
     quadratino.innerHTML = campo +1;
     //Al click la cella cambia colore e il numero viene stampato in console
     quadratino.addEventListener('click', function(){
-        quadratino.classList.add('backround');
-        console.log(quadratino.innerHTML)
+        
+        if(bombeArray.includes(campo +1)){
+
+        quadratino.classList.add('backround-color');
+        
+        }else{
+            quadratino.classList.add('backround');
+        } 
+            console.log(quadratino.innerHTML)
         
     })
     
@@ -70,13 +79,7 @@ function generaBombe(){
     return bombeArray;
 }
 
-function clickBombe(quadratino){
-    quadratino.addEventListener('click', function(){
-        quadratino.classList.add('backround-color');        
-        console.log(quadratino.innerHTML);
-        
-    })
-}
+
 
 
 
