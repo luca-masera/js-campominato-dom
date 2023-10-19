@@ -1,0 +1,28 @@
+
+#campo-gioco{
+    width: 650px;
+    height: 650px;
+    background-color: rgb(13, 10, 197);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+.cella-gioco{
+    border: 1.5px solid white;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(236, 21, 183);
+}
+button{
+    margin: 0px auto;
+    display: block;
+}
+
+.backround{
+    background-color: aquamarine;
+}
